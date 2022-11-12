@@ -1,6 +1,10 @@
 <?php
 namespace app\models;
 
+	#[\app\validators\NonEmpty]
+	#[\app\validators\ArrivalDate]
+	public $shipping_arrival_date;
+
 class Shipping extends \app\core\Model{
 	public function get($shipping_id){
 		$SQL = "SELECT * FROM shipping WHERE shipping_id=:shipping_id";

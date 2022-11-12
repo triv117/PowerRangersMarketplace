@@ -2,6 +2,25 @@
 namespace app\models;
 
 class Merchant extends \app\core\Model{
+
+	#[\app\validators\NonEmpty]
+	#[\app\validators\Email]
+	public $merchant_email;
+	#[\app\validators\NonEmpty]
+	#[\app\validators\Phone]
+	public $merchant_phone
+	#[\app\validators\NonEmpty]
+	public $merchant_address;
+	#[\app\validators\NonEmpty]
+	public $merchant_city
+	#[\app\validators\NonEmpty]
+	#[\app\validators\Country]
+	public $merchant_country;
+	#[\app\validators\NonEmpty]
+	public $merchant_region
+	#[\app\validators\NonEmpty]
+	public $merchant_zip;
+
 	public function get($merchant_id){
 		$SQL = "SELECT * FROM merchant WHERE merchant_id=:merchant_id";
 		$STMT = self::$_connection->prepare($SQL);
@@ -42,5 +61,5 @@ class Merchant extends \app\core\Model{
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$this->user_id,
 						'merchant_id'=>$this->merchant_id]);
-		}
 	}
+}

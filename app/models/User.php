@@ -2,6 +2,29 @@
 namespace app\models;
 
 class User extends \app\core\Model{
+
+	#[\app\validators\NonEmpty]
+	public $user_fname;
+	#[\app\validators\NonEmpty]
+	public $user_lname
+	#[\app\validators\NonEmpty]
+	#[\app\validators\Email]
+	public $user_email;
+	#[\app\validators\NonEmpty]
+	#[\app\validators\Phone]
+	public $user_phone
+	#[\app\validators\NonEmpty]
+	public $user_address;
+	#[\app\validators\NonEmpty]
+	public $user_city
+	#[\app\validators\NonEmpty]
+	#[\app\validators\Country]
+	public $user_country;
+	#[\app\validators\NonEmpty]
+	public $user_region
+	#[\app\validators\NonEmpty]
+	public $user_zip;
+
 	public function get($username){
 			$SQL = "SELECT * FROM user WHERE username LIKE :username";
 			$STMT = self::$_connection->prepare($SQL);
@@ -49,3 +72,4 @@ class User extends \app\core\Model{
 		$STMT->execute(['user_password_hash'=>$this->user_password_hash,
 					    'user_id'=>$this->user_id]);
 	}
+}
