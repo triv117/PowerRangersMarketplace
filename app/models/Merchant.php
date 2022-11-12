@@ -29,11 +29,19 @@ class Merchant extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getByName($merchant_name){
+		$SQL = "SELECT * FROM merchant WHERE merchant_name=:merchant_name";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['merchant_name'=>$merchant_name]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Merchant');
+		return $STMT->fetch();
+	}
+
 	public function insert(){
 		$SQL = "INSERT INTO merchant(user_id, merchant_name, merchant_email, merchant_phone, merchant_address, merchant_city, merchant_country, merchant_region, merchant_zip) VALUES (:user_id, :merchant_name, :merchant_email, :merchant_phone, :merchant_address, :merchant_city, :merchant_country, :merchant_region, :merchant_zip)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_id'=>$this->user_id,
-						'merchant_name'=>$this->merchant_lname,
+						'merchant_name'=>$this->merchant_name,
 						'merchant_email'=>$this->merchant_email,
 						'merchant_phone'=>$this->merchant_phone,
 						'merchant_address'=>$this->merchant_address,
