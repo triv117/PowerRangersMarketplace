@@ -91,6 +91,7 @@ CREATE TABLE `user` (
   `user_email` varchar(100) NOT NULL,
   `user_phone` varchar(15) NOT NULL,
   `user_address` text NOT NULL,
+  `user_city` varchar(50) NOT NULL,
   `user_country` varchar(50) NOT NULL,
   `user_region` varchar(50) NOT NULL,
   `user_zip` varchar(50) NOT NULL,
