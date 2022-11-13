@@ -50,7 +50,7 @@ class User extends \app\core\Model{
 	}
 
 	public function update(){
-		$SQL = "UPDATE user SET user_fname=:user_fname, user_lname=:user_lname, user_email=:user_email, user_phone=:user_phone, user_address=:user_address, user_city=:user_city, user_country=:user_country, user_region=:user_regionm user_zip=:user_zip WHERE user_id=user_id";
+		$SQL = "UPDATE user SET user_fname=:user_fname, user_lname=:user_lname, user_email=:user_email, user_phone=:user_phone, user_address=:user_address, user_city=:user_city, user_country=:user_country, user_region=:user_regionm user_zip=:user_zip WHERE user_id=:user_id";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['user_username'=>$this->user_username,
 						'user_password_hash'=>$this->user_password_hash,
