@@ -21,26 +21,24 @@ class Product extends \app\core\Model{
 	}
 
 	public function insert(){
-		$SQL = "INSERT INTO product(product_name, product_description, product_units, product_price,product_manufacturer,product_rating, product_category) VALUES (:product_name, :product_description, :product_units, :product_price, :product_manufacturer, :product_rating, :product_category)";
+		$SQL = "INSERT INTO product(product_name, product_description, product_units, product_price,product_manufacturer, product_category) VALUES (:product_name, :product_description, :product_units, :product_price, :product_manufacturer, :product_category)";
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['product_name'=>$this->product_name,
 						'product_description'=>$this->product_description,
 						'product_units'=>$this->product_units,
 						'product_price'=>$this->product_price,
 						'product_manufacturer'=>$this->product_manufacturer,
-						'product_rating'=>$this->product_rating,
 						'product_category'=>$this->product_category]);
 	}
 
 	public function update(){
-		$SQL = "UPDATE product SET product_name=:product_name, product_description=:product_description, product_units=:product_units, product_price=:product_price, product_manufacturer=:product_manufacturer, product_rating=:product_rating, product_category=:product_category WHERE product_id=:product_id"
+		$SQL = "UPDATE product SET product_name=:product_name, product_description=:product_description, product_units=:product_units, product_price=:product_price, product_manufacturer=:product_manufacturer, product_category=:product_category WHERE product_id=:product_id"
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['product_name'=>$this->product_name,
 						'product_description'=>$this->product_description,
 						'product_units'=>$this->product_units,
 						'product_price'=>$this->product_price,
 						'product_manufacturer'=>$this->product_manufacturer,
-						'product_rating'=>$this->product_rating,
 						'product_category'=>$this->product_category,
 						'product_id'=>$this->product_id]);
 	}
