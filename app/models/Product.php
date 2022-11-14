@@ -12,6 +12,7 @@ class Product extends \app\core\Model{
         return $STMT->fetchAll();
     }
 
+
 	public function get($product_id){
 		$SQL = "SELECT * FROM product WHERE product_id = :product_id";
 		$STMT = self::$_connection->prepare($SQL);
@@ -19,6 +20,14 @@ class Product extends \app\core\Model{
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
 		return $STMT->fetch();
 	}
+
+	public function getByMerchant($merchant_id){
+        $SQL = "SELECT * FROM product WHERE product_category = :merchant_id";
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['merchant_id'=>$merchant_id]);
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
+        return $STMT->fetchAll();
+    }
 
 	public function insert(){
 		$SQL = "INSERT INTO product(product_name, product_description, product_units, product_price,product_manufacturer, product_category) VALUES (:product_name, :product_description, :product_units, :product_price, :product_manufacturer, :product_category)";

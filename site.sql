@@ -49,7 +49,7 @@ CREATE TABLE `merchant` (
 
 CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
-  `mechant_id` int(11) NOT NULL,
+  `merchant_id` int(11) NOT NULL,
   `product_name` varchar(255) NOT NULL,
   `product_description` text NOT NULL,
   `product_units` int(11) NOT NULL,
@@ -117,7 +117,7 @@ ALTER TABLE `merchant`
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `product_name` (`product_name`),
-  ADD KEY `merchant_id` (`mechant_id`);
+  ADD KEY `merchant_id` (`merchant_id`);
 
 --
 -- Indexes for table `shipping`
@@ -177,7 +177,7 @@ ALTER TABLE `merchant`
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `merchant_id` FOREIGN KEY (`mechant_id`) REFERENCES `merchant` (`merchant_id`);
+  ADD CONSTRAINT `merchant_id` FOREIGN KEY (`merchant_id`) REFERENCES `merchant` (`merchant_id`);
 
 --
 -- Constraints for table `shipping`
