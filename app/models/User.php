@@ -6,29 +6,29 @@ class User extends \app\core\Model{
 	#[\app\validators\NonEmpty]
 	public $user_fname;
 	#[\app\validators\NonEmpty]
-	public $user_lname
+	public $user_lname;
 	#[\app\validators\NonEmpty]
 	#[\app\validators\Email]
 	public $user_email;
 	#[\app\validators\NonEmpty]
 	#[\app\validators\Phone]
-	public $user_phone
+	public $user_phone;
 	#[\app\validators\NonEmpty]
 	public $user_address;
 	#[\app\validators\NonEmpty]
-	public $user_city
+	public $user_city;
 	#[\app\validators\NonEmpty]
 	#[\app\validators\Country]
 	public $user_country;
 	#[\app\validators\NonEmpty]
-	public $user_region
+	public $user_region;
 	#[\app\validators\NonEmpty]
 	public $user_zip;
 
-	public function get($username){
-			$SQL = "SELECT * FROM user WHERE username LIKE :username";
+	public function get($user_username){
+			$SQL = "SELECT * FROM user WHERE user_username LIKE :user_username";
 			$STMT = self::$_connection->prepare($SQL);
-			$STMT->execute(['username'=>$username]);
+			$STMT->execute(['user_username'=>$user_username]);
 			$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\User');
 			return $STMT->fetch();
 		}
