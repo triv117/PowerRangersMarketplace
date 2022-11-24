@@ -1,4 +1,4 @@
- <?php
+<?php
 namespace app\controllers;
 
 class Merchant extends \app\core\Controller{
@@ -15,7 +15,7 @@ class Merchant extends \app\core\Controller{
 				header('location:/Merchant/register?error=The Merchant name: "'.$_POST['username'].'" is already in use.');
 			}else{
 				$merchant->user_id = $_SESSION["user_id"]
-				$merchant->merchantname = $_POST['merchant_name'];
+				$merchant->merchant_name = $_POST['merchant_name'];
 				$merchant->merchant_fname = $_POST['merchant_fname'];
 				$merchant->merchant_email; = $_POST['merchant_email'];
 				$merchant->merchant_phone = $_POST['merchant_phone'];
