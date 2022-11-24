@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_count` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`,`product_id`),
+  PRIMARY KEY (`user_id`,`product_id`) USING BTREE,
   KEY `FK_cart2` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -105,6 +105,20 @@ CREATE TABLE IF NOT EXISTS `shipping` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transaction`
+--
+
+CREATE TABLE IF NOT EXISTS `transaction` (
+  `shipping_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_count` int(11) NOT NULL,
+  PRIMARY KEY (`shipping_id`,`product_id`) USING BTREE,
+  KEY `shipping_id2` (`shipping_id`),
+  KEY `product_id2` (`product_id`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+--
 -- Table structure for table `user`
 --
 
@@ -169,6 +183,13 @@ ALTER TABLE `shipping`
   ADD CONSTRAINT `merchant_id2` FOREIGN KEY (`merchant_id`) REFERENCES `merchant` (`merchant_id`),
   ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `user_id2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD CONSTRAINT `FK_shipping_id` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`shipping_id`),
+  ADD CONSTRAINT `FK_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
 
 --
 -- Constraints for table `wishlist`
