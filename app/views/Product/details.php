@@ -6,47 +6,63 @@
 </head>
 
 <body>
-<h1>Client information</h1>
-<?php $this->view('Owner/detailsPartial',$data['owner']); ?>
-
-<h1>Animal information</h1>
+<h1>Product information</h1>
+ 
 <dl>
 	<dt>
-		Name:
+		Product Name:
 	</dt>
 	<dd>
-		<?= $data['animal']->name ?>
+		<?= $data['product_name']->product_name ?>
 	</dd>
 	<dt>
-		Date of Birth:
+		Product Description:
 	</dt>
 	<dd>
-		<?= $data['animal']->dob ?>
+		<?= $data['product_description']->product_description ?>
 	</dd>
 	<dt>
-		Country of origin:
+		Product Units:
 	</dt>
 	<dd>
-		<?= $data['animal']->nicename ?>
+		<?= $data['product_units']->product_units ?>
 	</dd>
 	<dt>
-		Picture:
+		Product Price:
 	</dt>
 	<dd>
-		<img src="/images/blank.jpg" style="max-width:200px;max-height:200px" id="profile_pic_preview" />
+		<?= $data['product_price']->product_price ?>
+	</dd>
+	<dt>
+		Product Manufacturer:
+	</dt>
+	<dd>
+		<?= $data['product_manufacturer']->product_manufacturer ?>
+	</dd>
+	<dt>
+		Product Rating:
+	</dt>
+	<dd>
+		<?= $data['product_rating']->product_rating ?>
+	</dd>
+	<dt>
+		Product Category:
+	</dt>
+	<dd>
+		<?= $data['product_category']->product_category ?>
 	</dd>
 </dl>
 
 
 
-<script>
+<!-- <script>
 file = "" + "<?= $data['animal']->profile_pic ?>"
 if (file != "") {
 	document.getElementById("profile_pic_preview").src = "/images/" + file;
 }
-</script>
+</script> -->
 
-<a href='/Animal/index/<?= $data['owner']->owner_id ?>'>Back to index</a>
+<a href='/Product/index/<?= $data['product']->merchant_id ?>'>Back to index</a>
 
 </body>
 </html>
