@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `product_id` int(11) NOT NULL,
   `product_count` int(11) NOT NULL,
   PRIMARY KEY (`user_id`,`product_id`) USING BTREE,
-  KEY `FK_cart2` (`product_id`)
+  KEY `cart2` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

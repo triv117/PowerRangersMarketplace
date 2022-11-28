@@ -53,7 +53,7 @@ class Product extends \app\core\Controller{
 
 			header('location:/Product/index?message=Item updated.');
 		}else{
-			$this->view('Product/editProduct');
+			$this->view('Product/editProduct',['product'->$product]);
 		}
 	}
 
@@ -61,9 +61,5 @@ class Product extends \app\core\Controller{
 		$product = new \app\models\Product();
 		$product = $product->get($product_id)
 		$this->view('Product/details',['product'=>$product]);
-	}
-	
-	}else{
-		$this->view('Merchant/edit');
 	}
 }
