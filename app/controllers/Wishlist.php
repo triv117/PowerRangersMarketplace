@@ -28,9 +28,9 @@ class User extends \app\core\Controller{
 	public function deleteFromWishlist($product_id){
 		$wishlist = new app\models\Wishlist();
 		$wishlist = $wishlist->getByUser($_SESSION['user_id']);
-		
-		$wishlistEntry = new app\models\Wishlist();
-		$wishlistEntry = $wishlistEntry->get($_SESSION['user_id'], $product_id);
+
+		$wishlist = new app\models\Wishlist();
+		$wishlistEntry = $wishlist->get($_SESSION['user_id'], $product_id);
 		$wishlistEntry->delete();
 		$this->view('Wishlist/index',['wishlist'->$wishlist]);
 	}

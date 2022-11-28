@@ -64,4 +64,13 @@ class Product extends \app\core\Controller{
 		$product = $product->get($product_id);
 		$this->view('Product/details',['product'=>$product]);
 	}
+
+	public function viewMerchant($merchant_id){
+		$merchant = new \app\models\Merchant();
+		$merchant = $merchant->get($merchant_id);
+
+		$product = new \app\models\Product();
+		$products = $product->getByMerchant($merchant_id)
+		$this->view('Product/merchant',['merchant'=>$merchant]);
+	}
 }
