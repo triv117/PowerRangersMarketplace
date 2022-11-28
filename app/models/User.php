@@ -26,12 +26,12 @@ class User extends \app\core\Model{
 	public $user_zip;
 
 	public function get($user_username){
-			$SQL = "SELECT * FROM user WHERE user_username LIKE :user_username";
-			$STMT = self::$_connection->prepare($SQL);
-			$STMT->execute(['user_username'=>$user_username]);
-			$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\User');
-			return $STMT->fetch();
-		}
+		$SQL = "SELECT * FROM user WHERE user_username LIKE :user_username";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_username'=>$user_username]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\User');
+		return $STMT->fetch();
+	}
 
 	public function insert(){
 		$SQL = "INSERT INTO user(user_username, user_password_hash, user_fname, user_lname, user_email, user_phone, user_address, user_city, user_country, user_region, user_zip) VALUES (:user_username, :user_password_hash, :user_fname, :user_lname, :user_email, :user_phone, :user_address, :user_city, :user_country, :user_region, :user_zip)";

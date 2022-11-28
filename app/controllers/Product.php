@@ -21,6 +21,7 @@ class Product extends \app\core\Controller{
 			$product->product_rating = 0;
 			$product->product_category = $_POST['product_category'];
 			$product->insert();
+
 			header('location:/Product/index?message=Item added to catalogue.');
 		}else{
 			$this->view('Product/addProduct');
@@ -50,16 +51,17 @@ class Product extends \app\core\Controller{
 			$product->product_price = $_POST['product_price'];
 			$product->product_manufacturer = $_POST['product_manufacturer'];
 			$product->product_category = $_POST['product_category'];
+			$product->update();
 
 			header('location:/Product/index?message=Item updated.');
 		}else{
-			$this->view('Product/editProduct',['product'->$product]);
+			$this->view('Product/editProduct',['product'=>$product]);
 		}
 	}
 
 	public function viewProduct($product_id){
 		$product = new \app\models\Product();
-		$product = $product->get($product_id)
+		$product = $product->get($product_id);
 		$this->view('Product/details',['product'=>$product]);
 	}
 }
