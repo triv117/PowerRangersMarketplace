@@ -6,25 +6,28 @@
 </head>
 
 <body>
-<h1>Client Information</h1>
-<?php
-	$this->view('Owner/detailsPartial', $data['owner']);
-?>
-<h1>New Pet Information</h1>
+
+<h1>Edit Product Information</h1>
 <form action='' method='post' enctype="multipart/form-data">
-	<label>Name:<input type="text" name="name" value="<?= $data['animal']->name ?>" /></label><br>
-	<label>Date of Birth:<input type="date" name="dob" value="<?= $data['animal']->dob ?>" /></label><br>
-	<label>Country of origin:
-		<select name="country_id">
-<?php
-	foreach ($data['countries'] as $country) {
-		echo "<option value='$country->country_id'" . ($data['animal']->country_id == $country->country_id?" selected":"") . ">$country->nicename</option>";
-	}
-?>
-		</select>
-	</label><br>
-	<label>Profile picture:<input type="file" name="profile_pic" id="profile_pic" /></label><img id='profile_pic_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" /><br>
-	<input type="submit" name="action" value="Modify pet" />
+	<label for="product_name">Product Name:</label><br>
+    <input type="text" name="name" placeholder="Enter product name"/><hr>
+
+    <label for="product_description">Product Description:</label><br>
+    <textarea rows="10" cols="75" name="description" placeholder="Enter product description"></textarea><hr>
+
+    <label for="product_units">Product Unit:</label><br>
+    <input type="number" name="units" placeholder="Enter product unit"/><hr>
+
+    <label for="product_price">Product Price:</label><br>
+    <input type="number" name="price" placeholder="Enter product price"/><hr>
+
+    <label for="product_manufacturer">Product Manufacturer:</label><br>
+    <input type="text" name="manufacturer" placeholder="Enter product manufacturer"/><hr>
+
+    <label for="product_category">Product Category:</label><br>
+    <input type="text" name="category" placeholder="Enter product category"/><hr>
+
+	<input type="submit" name="action" value="Modify product" />
 </form>
 
 <script>
@@ -35,15 +38,14 @@ profile_pic.onchange = evt => {
   }
 }
 
-file = "<?= $data['animal']->profile_pic ?>";
+file = "<?= \app\core\Model::$input->profile_pic ?>";
 if (file != "") {
 	document.getElementById("profile_pic_preview").src = "/images/" + file;
 }
-
-
 </script>
+<?php $this->doFeedback('#form'); ?>
 
-<a href="/Animal/index/<?= $data['owner']->owner_id ?>">Cancel</a>
+<a href="/Product/index/<?= $data['user']->user_id ?>">Cancel</a>
 
 </body>
 </html>

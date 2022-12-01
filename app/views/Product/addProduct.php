@@ -6,10 +6,8 @@
 </head>
 
 <body>
-<!-- <h1>Product Information</h1> -->
-<?php
-	// $this->view('Owner/detailsPartial', $data['owner']);
-?> 
+
+
 <h1>New Product Information</h1>
 <form action='' method='post' enctype='multipart/form-data'>
 	<label for="product_name">Product Name:</label><br>
@@ -45,6 +43,8 @@
     }
 }
 </script>
+
+<a href="/Product/index/<?= $data['user']->user_id ?>">Back to index</a>
 
 </body>
 </html>

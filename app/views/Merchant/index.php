@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<p>Go go powpow.</p>
+<p>Welcome to PowerRangers marketplace(Better than pamazon)merchant>
 <?php
 	if(isset($_GET['error'])){ ?>
 <div class="alert alert-danger" role="alert">
@@ -21,13 +21,13 @@
 ?>
 
 <form action='' method='post'>
-	<label>Username:<input type="text" name="user_username" /></label><br>
-	<label>Password:<input type="password" name="user_password" /></label><br>
+	<label>Username:<input type="text" name="merchant_username" /></label><br>
+	<label>Password:<input type="password" name="merchant_password" /></label><br>
 	<!-- <input type="submit" name="action" value="Log in" /> -->
 	<button type= "submit" name="action" value="Log in">Login</a></button>
 
 </form>
-<button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\User\register">Register</a></button>
+<button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\Merchant\register">Register</a></button>
 
 </body>
 </html>

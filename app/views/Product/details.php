@@ -62,7 +62,7 @@ if (file != "") {
 }
 </script> -->
 
-<a href='/Product/index/<?= $data['product']->merchant_id ?>'>Back to index</a>
+<a href="/Product/index/<?= $data['user']->user_id ?>">Back to index</a>
 
 </body>
 </html>
