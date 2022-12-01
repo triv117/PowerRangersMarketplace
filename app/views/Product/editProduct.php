@@ -30,20 +30,6 @@
 	<input type="submit" name="action" value="Modify product" />
 </form>
 
-<script>
-profile_pic.onchange = evt => {
-  const [file] = profile_pic.files
-  if (file) {
-    profile_pic_preview.src = URL.createObjectURL(file)
-  }
-}
-
-file = "<?= \app\core\Model::$input->profile_pic ?>";
-if (file != "") {
-	document.getElementById("profile_pic_preview").src = "/images/" + file;
-}
-</script>
-<?php $this->doFeedback('#form'); ?>
 
 <a href="/Product/index/<?= $data['user']->user_id ?>">Cancel</a>
 

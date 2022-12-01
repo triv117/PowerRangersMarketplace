@@ -18,15 +18,6 @@
 <h1>New Merchant Information</h1>
 <form action='' method='post' enctype='multipart/form-data'>
 
-    <label>Username:</label><br>
-    <input type="text" name="merchant_username"/><hr>
-
-    <label>Password:</label><br>
-    <input type="password" name="merchant_password"/><hr>
-
-    <label>Password confirmation:</label><br>
-    <input type="password" name="merchant_password_confirmation"/><hr>
-
     <label>Merchant Name:</label><br>
     <input type="text" name="merchant_name" placeholder="Enter merchant name"/><hr>
 

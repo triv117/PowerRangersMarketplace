@@ -44,7 +44,7 @@
 }
 </script>
 
-<a href="/Product/index/<?= $data['user']->user_id ?>">Back to index</a>
+<a href="/Product/index">Back to index</a>
 
 </body>
 </html>

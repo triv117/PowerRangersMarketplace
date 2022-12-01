@@ -41,7 +41,6 @@
   <a href="User/account">Cancel</a>
 </form>
 
-<?php $this->doFeedback('#form'); ?>
 
 
 
