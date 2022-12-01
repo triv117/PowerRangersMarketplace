@@ -7,12 +7,5 @@
 
 <body>
 <p>This is the index of the store.</p>
-
-<!-- <ul>
-<li><a href='/Food'>foods example</a></li>
-<li><a href='/Vet/index'>Veterinarian Clinic example</a></li>
-</ul> -->
-
-
 </body>
 </html>

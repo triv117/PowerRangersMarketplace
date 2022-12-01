@@ -9,7 +9,7 @@ class User extends \app\core\Controller{
 			if(password_verify($_POST['user_password'], $user->user_password_hash)){
 				$_SESSION['user_username'] = $user->user_username;
 				$_SESSION['user_id'] = $user->user_id;
-				header('location:/User/account');
+				$this->view('User/account');
 			}else{
 				header('location:/User/index?error=Incorrect username or password combination!');
 			}
@@ -17,7 +17,6 @@ class User extends \app\core\Controller{
 			$this->view('User/index');
 		}
 	}
-
 
 	public function register(){
 		if(isset($_POST['action'])){
@@ -55,7 +54,7 @@ class User extends \app\core\Controller{
 				if($_POST['new_password'] == $_POST['new_password_confirm']){
 					$user->user_password_hash = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
 					$user->updatePassword();
-					header('location:/User/account?message=Password modified.');
+					header('location:/User/account' . $user->user_username . '?message=Password modified.');
 
 				}else{
 					header('location:/User/account?error=New passwords don\'t match. Password unchanged.');	
@@ -65,12 +64,13 @@ class User extends \app\core\Controller{
 			}
 
 		}else
-			$this->view('User/account');
+			$this->view('User/account/resetPassword');
 	}
 
-	public function edit($user_id){
+	public function edit($user_id = null){
+		$user_id = $_SESSION['user_id'];
 		$user = new \app\models\User();
-		$user = $user->get($user_id);
+		$user = $user->get($_SESSION['user_username']);
 
 		if(isset($_POST['action'])){
 
@@ -83,10 +83,11 @@ class User extends \app\core\Controller{
 			$user->user_country = $_POST['user_country'];
 			$user->user_region = $_POST['user_region'];
 			$user->user_zip = $_POST['user_zip'];
+			$user->user_id = $_SESSION['user_id'];
 
 			$user->update();
 
-			header('location:/User/account');
+			$this->view('User/account');
 			
 		}else{
 

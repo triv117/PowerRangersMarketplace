@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `transaction` (
   `product_count` int(11) NOT NULL,
   PRIMARY KEY (`shipping_id`,`product_id`) USING BTREE,
   KEY `shipping_id2` (`shipping_id`),
-  KEY `product_id2` (`product_id`),
+  KEY `product_id2` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -189,7 +189,7 @@ ALTER TABLE `shipping`
 --
 ALTER TABLE `transaction`
   ADD CONSTRAINT `FK_shipping_id` FOREIGN KEY (`shipping_id`) REFERENCES `shipping` (`shipping_id`),
-  ADD CONSTRAINT `FK_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  ADD CONSTRAINT `FK_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`);
 
 --
 -- Constraints for table `wishlist`

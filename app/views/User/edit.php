@@ -8,20 +8,15 @@
 <body>
 <h1>Edit user Information</h1>
 <form action='' method='post' enctype='multipart/form-data'>
-    <label>Username:</label><br>
-    <input type="text" name="user_username"/><hr>
 
-    <label>Password:</label><br>
-    <input type="password" name="user_password"/><hr>
+    <label>User First Name:</label><br>
+    <input type="text" name="user_fname" placeholder="Enter user name"/><hr>
 
-    <label>Password confirmation:</label><br>
-    <input type="password" name="user_password_confirmation"/><hr>
-
-    <label>User Name:</label><br>
-    <input type="text" name="user_name" placeholder="Enter user name"/><hr>
+    <label>User Last Name:</label><br>
+    <input type="text" name="user_lname" placeholder="Enter user name"/><hr>
 
     <label>User Email:</label><br>
-    <input type="text" name="user_email" placeholder="Enter user emal"/><hr>
+    <input type="text" name="user_email" placeholder="Enter user email"/><hr>
 
     <label>User Phone:</label><br>
     <input type="number" name="user_phone" placeholder="Enter user phone number"/><hr>
@@ -42,11 +37,13 @@
     <input type="text" name="user_zip" placeholder="Enter user postal code"/><hr>
 
   <input type="submit" name="action" value="Update" />
+
+  <a href="User/account">Cancel</a>
 </form>
 
 <?php $this->doFeedback('#form'); ?>
 
-<a href="/User/index/<?= $data['user']->user_id ?>">Cancel</a>
+
 
 </body>
 </html>

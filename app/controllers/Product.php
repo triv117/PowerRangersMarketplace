@@ -55,14 +55,14 @@ class Product extends \app\core\Controller{
 
 			header('location:/Product/index?message=Item updated.');
 		}else{
-			$this->view('Product/editProduct',['product'=>$product]);
+			$this->view('Product/editProduct/' . $product->product_id);
 		}
 	}
 
 	public function viewProduct($product_id){
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
-		$this->view('Product/details',['product'=>$product]);
+		$this->view('Product/details/' . $product->product_id);
 	}
 
 	public function viewMerchant($merchant_id){
@@ -71,6 +71,6 @@ class Product extends \app\core\Controller{
 
 		$product = new \app\models\Product();
 		$products = $product->getByMerchant($merchant_id)
-		$this->view('Product/merchant',['merchant'=>$merchant]);
+		$this->view('Product/merchant' . $merchant->merchant_id);
 	}
 }
