@@ -7,6 +7,20 @@
 
 <body>
 <p>Welcome!</p>
+<p><!--display the data as a table-->
+    <table>
+        <tr><th>Product Name</th></tr>
+    <?php
+
+    foreach ($data as $item) {
+        echo "<tr>
+        <td type=name>$item->product_name</td>
+        </tr>";
+    }
+
+?>
+</table>
+</p>
 <button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\User\edit">Edit Account</a></button>
 
 </body>
