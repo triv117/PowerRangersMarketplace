@@ -10,8 +10,8 @@
         <td type=name>$item->product_units</td>
         <td type=name>$item->product_price</td>
         <td type=action>
-        <a href='/Wishlist/details/$item->product_id'>details</a> |
-        <a href='/Wishlist/delete/$item->product_id'>delete</a> |s
+        <a href='/Product/details/$item->product_id'>details</a> |
+        <a href='/Wishlist/deleteFromWishlist/$item->product_id'>delete</a> |s
         </td>
         </tr>";
     }

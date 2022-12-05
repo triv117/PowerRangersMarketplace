@@ -53,7 +53,7 @@
 	</dd>
 </dl>
 
-
+<button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\Wishlist\addToWishlist">Add to Wishlist</a></button>
 
 <!-- <script>
 file = "" + "<?= $data['animal']->profile_pic ?>"
