@@ -8,16 +8,16 @@ class Merchant extends \app\core\Model{
 	public $merchant_email;
 	#[\app\validators\NonEmpty]
 	#[\app\validators\Phone]
-	public $merchant_phone
+	public $merchant_phone;
 	#[\app\validators\NonEmpty]
 	public $merchant_address;
 	#[\app\validators\NonEmpty]
-	public $merchant_city
+	public $merchant_city;
 	#[\app\validators\NonEmpty]
 	#[\app\validators\Country]
 	public $merchant_country;
 	#[\app\validators\NonEmpty]
-	public $merchant_region
+	public $merchant_region;
 	#[\app\validators\NonEmpty]
 	public $merchant_zip;
 

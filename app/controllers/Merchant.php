@@ -3,7 +3,7 @@ namespace app\controllers;
 
 class Merchant extends \app\core\Controller{
 	public function index(){
-		$this->view('Merchant/index')
+		$this->view('Merchant/index');
 	}
 
 	public function register(){
@@ -14,10 +14,10 @@ class Merchant extends \app\core\Controller{
 			if($merchant->getByName($_POST['merchant_name'])){
 				header('location:/Merchant/register?error=The Merchant name: "'.$_POST['username'].'" is already in use.');
 			}else{
-				$merchant->user_id = $_SESSION["user_id"]
+				$merchant->user_id = $_SESSION["user_id"];
 				$merchant->merchant_name = $_POST['merchant_name'];
 				$merchant->merchant_fname = $_POST['merchant_fname'];
-				$merchant->merchant_email; = $_POST['merchant_email'];
+				$merchant->merchant_email = $_POST['merchant_email'];
 				$merchant->merchant_phone = $_POST['merchant_phone'];
 				$merchant->merchant_address = $_POST['merchant_address'];
 				$merchant->merchant_city = $_POST['merchant_city'];
@@ -28,8 +28,9 @@ class Merchant extends \app\core\Controller{
 				header('location:/Merchant/index');
 			}
 		}
-	}else{
-		$this->view('Merchant/register');
+		else{
+			$this->view('Merchant/register');
+		}
 	}
 
 	public function changeAdmin(){
@@ -61,7 +62,7 @@ class Merchant extends \app\core\Controller{
 
 		if(isset($_POST['action'])){
 			$merchant->merchant_name = $_POST['merchant_name'];
-			$merchant->merchant_email; = $_POST['merchant_email'];
+			$merchant->merchant_email = $_POST['merchant_email'];
 			$merchant->merchant_phone = $_POST['merchant_phone'];
 			$merchant->merchant_address = $_POST['merchant_address'];
 			$merchant->merchant_city = $_POST['merchant_city'];
@@ -70,9 +71,9 @@ class Merchant extends \app\core\Controller{
 			$merchant->merchant_zip = $_POST['merchant_zip'];
 			$merchant->update();
 			header('location:/Merchant/index');
-			}
 		}
-	}else{
-		$this->view('Merchant/edit');
+		else{
+			$this->view('Merchant/edit');
+		}
 	}
 }

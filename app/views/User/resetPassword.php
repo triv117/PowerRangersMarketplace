@@ -4,7 +4,7 @@
 	<label>Password confirmation:<input type="password" name="user_password_confirmation" /></label><br>
 	<button type= "submit" name="action" value="resetPassword">Confirm</a></button>
 
-	<a href="Merchant/index">Cancel</a>
+	<a href="User/index">Cancel</a>
 
 
 </form>

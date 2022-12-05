@@ -55,7 +55,9 @@
 	<input type="text" name="user_zip"/><hr>
 
 	<input type="submit" name="action" value="Register" />
+
 </form>
+<a href="User/account">Cancel</a>
 
 </body>
 </html>

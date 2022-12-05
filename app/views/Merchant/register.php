@@ -25,7 +25,7 @@
     <input type="text" name="merchant_email" placeholder="Enter merchant emal"/><hr>
 
     <label>Merchant Phone:</label><br>
-    <input type="number" name="merchant_phone" placeholder="Enter merchant phone number"/><hr>
+    <input type="text" name="merchant_phone" placeholder="Enter merchant phone number"/><hr>
 
     <label>Merchant Address:</label><br>
     <input type="text" name="merchant_address" placeholder="Enter merchant address"/><hr>
@@ -44,5 +44,7 @@
 
 	<input type="submit" name="action" value="Register" />
 </form>
+
+<a href="Merchant/index">Cancel</a>
 </body>
 </html>

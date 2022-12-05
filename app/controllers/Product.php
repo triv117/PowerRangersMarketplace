@@ -5,16 +5,16 @@ class Product extends \app\core\Controller{
 	public function index(){
 		$product = new \app\models\Product();
 		$products = $product->getAll();
-		$this->view('Product/index')
+		$this->view('Product/index');
 	}
 
 	public function addProduct(){
 		if(isset($_POST['action'])){
 			$product = new \app\models\Product();
 
-			$product->merchant_id = $_SESSION["merchant_id"]
+			$product->merchant_id = $_SESSION["merchant_id"];
 			$product->product_name = $_POST['product_name'];
-			$product->product_description; = $_POST['product_description'];
+			$product->product_description = $_POST['product_description'];
 			$product->product_units = $_POST['product_units'];
 			$product->product_price = $_POST['product_price'];
 			$product->product_manufacturer = $_POST['product_manufacturer'];
@@ -70,7 +70,7 @@ class Product extends \app\core\Controller{
 		$merchant = $merchant->get($merchant_id);
 
 		$product = new \app\models\Product();
-		$products = $product->getByMerchant($merchant_id)
+		$products = $product->getByMerchant($merchant_id);
 		$this->view('Product/merchant' . $merchant->merchant_id);
 	}
 }

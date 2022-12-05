@@ -59,7 +59,7 @@ if (file != "") {
 </script>
 <?php $this->doFeedback('#form'); ?>
 
-<a href="/Merchant/index/<?= $data['user']->user_id ?>">Cancel</a>
+<a href="Merchant/index">Cancel</a>
 
 </body>
 </html>

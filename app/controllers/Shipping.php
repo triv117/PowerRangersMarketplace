@@ -16,7 +16,7 @@ class Shipping extends \app\core\Controller{
 			$orders = $order->getByMerchant($merchant_id);
 			$this->view('Shipping/index',['user'=>$user, 'orders'=>$orders]);
 		}
-		$this->view('Shipping/index')
+		$this->view('Shipping/index');
 	}
 
 	public function viewOrder($shipping_id){
@@ -24,7 +24,7 @@ class Shipping extends \app\core\Controller{
 		$shipping = $shipping->get($shipping_id);
 		$transaction = \app\models\Transaction();
 		$transactions = $transaction->getByShipping($shipping_id);
-		$this->view('Shipping/viewOrder',['shipping'=>$shipping, 'transactions'=>$transactions])
+		$this->view('Shipping/viewOrder',['shipping'=>$shipping, 'transactions'=>$transactions]);
 	}
 
 	public function updateOrder($shipping_id){

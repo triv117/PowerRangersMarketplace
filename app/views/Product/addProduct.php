@@ -11,22 +11,22 @@
 <h1>New Product Information</h1>
 <form action='' method='post' enctype='multipart/form-data'>
 	<label for="product_name">Product Name:</label><br>
-    <input type="text" name="name" placeholder="Enter product name"/><hr>
+    <input type="text" name="product_name" placeholder="Enter product name"/><hr>
 
-    <label for="product_description">Product Description:</label><br>
-    <textarea rows="10" cols="75" name="description" placeholder="Enter product description"></textarea><hr>
+    <label>Product Description:</label><br>
+    <textarea rows="10" cols="75" name="product_description" placeholder="Enter product description"></textarea><hr>
 
-    <label for="product_units">Product Unit:</label><br>
-    <input type="number" name="units" placeholder="Enter product unit"/><hr>
+    <label>Product Unit:</label><br>
+    <input type="number" name="product_units" placeholder="Enter product unit"/><hr>
 
-    <label for="product_price">Product Price:</label><br>
-    <input type="number" name="price" placeholder="Enter product price"/><hr>
+    <label>Product Price:</label><br>
+    <input type="text" name="product_price" placeholder="Enter product price"/><hr>
 
-    <label for="product_manufacturer">Product Manufacturer:</label><br>
-    <input type="text" name="manufacturer" placeholder="Enter product manufacturer"/><hr>
+    <label>Product Manufacturer:</label><br>
+    <input type="text" name="product_manufacturer" placeholder="Enter product manufacturer"/><hr>
 
-    <label for="product_category">Product Category:</label><br>
-    <input type="text" name="category" placeholder="Enter product category"/><hr>
+    <label>Product Category:</label><br>
+    <input type="text" name="product_category" placeholder="Enter product category"/><hr>
 
 	<label>Product picture:</label><br>
     <input type="file" name="product_pic" id="product_pic"/>

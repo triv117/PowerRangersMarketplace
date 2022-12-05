@@ -69,35 +69,36 @@
 
 </body>
 </html>-->
-<!DOCTYPE html>
 <html>
 <head>
-  <title>GoGo Power Rangers</title>
-
+    <title>Main Merchant</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<p><!--display the data as a table-->
-    <a href="/Merchant/register">Add a new merchant</a>
-    <table>
-        <tr><th>Product Name</th><th>Stock</th><th>Price</th><th>Action</th></tr>
-    <?php
-
-    foreach ($data as $item) {
-        echo "<tr>
-        <td type=name>$item->product_name</td>
-        <td type=name>$item->product_units</td>
-        <td type=name>$item->product_price</td>
-        <td type=action>
-        <a href='/Product/edit/$item->product_id'>edit</a> | 
-        <a href='/Product/details/$item->product_id'>details</a> |
-        <a href='/Product/delete/$item->product_id'>delete</a> |s
-        </td>
-        </tr>";
-    }
-
+<p>Go go powpow.</p>
+<?php
+    if(isset($_GET['error'])){ ?>
+<div class="alert alert-danger" role="alert">
+  <?= $_GET['error'] ?>
+</div>
+<?php   }
+    if(isset($_GET['message'])){ ?>
+<div class="alert alert-success" role="alert">
+  <?= $_GET['message'] ?>
+</div>
+<?php   }
 ?>
-</table>
-</p>
+
+<form action='' method='post'>
+    <label>Username:<input type="text" name="user_username" /></label><br>
+    <label>Password:<input type="password" name="user_password" /></label><br>
+    <!-- <input type="submit" name="action" value="Log in" /> -->
+    <button type= "submit" name="action" value="Log in">Login</a></button>
+
+</form>
+<button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\Merchant\register">Register</a></button>
+
 </body>
 </html>
