@@ -22,6 +22,7 @@
 </table>
 </p>
 <button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\User\edit">Edit Account</a></button>
+<button class="btn btn-primary"><a style="color:white" href="\User\logout">Log Out</a></button>
 
 </body>
 </html>
