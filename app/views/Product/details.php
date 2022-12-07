@@ -60,5 +60,6 @@ if (file != "") {
 
 <a href="/Product/index">Back to index</a>
 
-</body>
-</html>
+<?php
+$this->view('shared/footer');
+?>

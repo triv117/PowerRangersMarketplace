@@ -29,5 +29,6 @@ $this->view('shared/merchantHeader', 'Edit product');
 
 <a href="/Product/index/<?= $data['user']->user_id ?>">Cancel</a>
 
-</body>
-</html>
+<?php
+$this->view('shared/footer');
+?>
