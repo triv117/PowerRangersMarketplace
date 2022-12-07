@@ -1,6 +1,7 @@
 <?php
 $this->view('shared/userHeader', 'User Index');
 ?>
+
 <p><!--display the data as a table-->
     <a href="/Merchant/register">Add a new merchant</a>
     <table>
@@ -14,7 +15,7 @@ $this->view('shared/userHeader', 'User Index');
         <td type=name>$item->product_price</td>
         <td type=action>
         <a href='/Product/details/$item->product_id'>details</a> |
-        <a href='/Wishlist/deleteFromWishlist/$item->product_id'>delete</a> |
+        <a href='/Cart/deleteFromCart/$item->product_id'>delete</a> |
         </td>
         </tr>";
     }
@@ -22,6 +23,7 @@ $this->view('shared/userHeader', 'User Index');
 ?>
 </table>
 </p>
+
 <?php
 $this->view('shared/footer');
 ?>

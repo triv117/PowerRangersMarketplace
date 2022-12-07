@@ -1,3 +1,6 @@
+<?php
+$this->view('shared/merchantHeader', 'Change Admin');
+?>
 <form action='' method='post'>
 	<label>Transfer to (username):<input type="text" name="user_username" /></label><br>
 	<label>Password:<input type="password" name="user_password" /></label><br>
@@ -8,3 +11,6 @@
 
 
 </form>
+<?php
+$this->view('shared/footer');
+?>
