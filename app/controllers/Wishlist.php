@@ -12,14 +12,14 @@ class User extends \app\core\Controller{
 			$product = $product->get($product_id);
 
 			$wishlist->product_id = $product_id;
-			$addToWishlist->insert();
+			$wishlist->insert();
 			header('location:/Product/details',['product'->$product]);
 		}else{
 			$this->view('Product/details',['product'->$product]);
 		}
 	}
 
-	public function viewWishlist(){
+	public function index(){
 		$wishlist = new app\models\Wishlist();
 		$wishlist = $wishlist->getByUser($_SESSION['user_id']);
 		$this->view('Wishlist/index',['wishlist'->$wishlist]);
