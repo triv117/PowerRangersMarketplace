@@ -29,6 +29,14 @@ class Merchant extends \app\core\Model{
 		return $STMT->fetch();
 	}
 
+	public function getByUser($user_id){
+		$SQL = "SELECT * FROM merchant WHERE user_id=:user_id";
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['user_id'=>$user_id]);
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Merchant');
+		return $STMT->fetch();
+	}
+
 	public function getByName($merchant_name){
 		$SQL = "SELECT * FROM merchant WHERE merchant_name=:merchant_name";
 		$STMT = self::$_connection->prepare($SQL);

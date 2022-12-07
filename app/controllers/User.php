@@ -9,7 +9,13 @@ class User extends \app\core\Controller{
 			if(password_verify($_POST['user_password'], $user->user_password_hash)){
 				$_SESSION['user_username'] = $user->user_username;
 				$_SESSION['user_id'] = $user->user_id;
-				$this->view('User/account');
+				$merchant = new \app\models\Merchant();
+				if($merchant->getByUser($_SESSION['user_id'])){
+					$_SESSION['merchant_id'] = $merchant->merchant_id;
+					$this->view('Merchant/index');
+				}else{
+					$this->view('User/account');
+				}
 			}else{
 				header('location:/User/index?error=Incorrect username or password combination!');
 			}
