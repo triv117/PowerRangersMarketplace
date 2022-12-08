@@ -22,7 +22,9 @@ class Product extends \app\core\Controller{
 			$product->product_category = $_POST['product_category'];
 			$product->insert();
 
-			header('location:/Product/index?message=Item added to catalogue.');
+			$product = $product->getByMerchant($_SESSION['merchant_id']);
+
+			$this->view('Merchant/index', ['product'=>$product]);
 		}else{
 			$this->view('Product/addProduct');
 		}
@@ -53,7 +55,7 @@ class Product extends \app\core\Controller{
 			$product->product_category = $_POST['product_category'];
 			$product->update();
 
-			header('location:/Product/index?message=Item updated.');
+			header('location:/Merchant/index?message=Item updated.');
 		}else{
 			$this->view('Product/editProduct/' . $product->product_id);
 		}

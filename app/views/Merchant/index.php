@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<p>Welcome to PowerRangers marketplace(Better than pamazon)merchant<p>
+<p>Welcome to PowerRangers marketplace<p>
 <div class="col-md-11 mx-auto">
   <div class="row">
   </div>
@@ -18,15 +18,14 @@
                 <?php
                 foreach ($data as $product) {
                 echo "<tr>
-                <td type=t>$product->product_id</td>
-                <td type=name>$product->product_name</td>
-                <td type=name>$product->product_category</td>
-                <td type=name>$product->product_price</td>
+                <td type=name>$product->merchant_id->$product_id</td>
+                <td type=name>$product->merchant_id->$product_name</td>
+                <td type=name>$product->merchant_id->$product_category</td>
+                <td type=name>$product->merchant_id->$product_price</td>
                 <td type=action>
-                    |
-                    <a href='/Product/editProduct/$product->merchant_id'>edit</a> | 
-                    <a href='/Product/viewProduct/$product->merchant_id'>details</a> |
-                    <a href='/Product/removeProduct/$product->merchant_id'>delete</a> |
+                    <a href='/Product/editProduct/$product->product_id'>edit</a> | 
+                    <a href='/Product/viewProduct/$product->product_id'>details</a> |
+                    <a href='/Product/removeProduct/$product->product_id'>delete</a> |
                 </td>
                 </tr>";
                 }

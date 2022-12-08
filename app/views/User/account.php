@@ -8,9 +8,9 @@ $this->view('shared/userHeader', 'User Index');
         <tr><th>Product Name</th></tr>
     <?php
 
-    foreach ($data as $item) {
+    foreach ($data as $product) {
         echo "<tr>
-        <td type=name>$item->product_name</td>
+        <td type=name>$product->product_name</td>
         </tr>";
     }
 

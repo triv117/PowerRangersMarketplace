@@ -26,6 +26,9 @@ class Merchant extends \app\core\Controller{
 				$merchant->merchant_region = $_POST['merchant_region'];
 				$merchant->merchant_zip = $_POST['merchant_zip'];
 				$merchant->insert();
+
+				$merchant = $merchant->getByUser($_SESSION['user_id']);
+				$_SESSION['merchant_id'] = $merchant->merchant_id;
 				header('location:/Merchant/index');
 			}
 		}

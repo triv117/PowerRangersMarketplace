@@ -30,9 +30,10 @@ class Product extends \app\core\Model{
     }
 
 	public function insert(){
-		$SQL = "INSERT INTO product(product_name, product_description, product_units, product_price,product_manufacturer, product_category) VALUES (:product_name, :product_description, :product_units, :product_price, :product_manufacturer, :product_category)";
+		$SQL = "INSERT INTO product(merchant_id, product_name, product_description, product_units, product_price,product_manufacturer, product_category) VALUES (:merchant_id, :product_name, :product_description, :product_units, :product_price, :product_manufacturer, :product_category)";
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['product_name'=>$this->product_name,
+		$STMT->execute(['merchant_id'=>$this->merchant_id,
+						'product_name'=>$this->product_name,
 						'product_description'=>$this->product_description,
 						'product_units'=>$this->product_units,
 						'product_price'=>$this->product_price,
