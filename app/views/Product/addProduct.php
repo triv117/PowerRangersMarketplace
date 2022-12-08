@@ -23,21 +23,9 @@ $this->view('shared/merchantHeader', 'Add product');
     <label>Product Category:</label><br>
     <input type="text" name="product_category" placeholder="Enter product category"/><hr>
 
-	<label>Product picture:</label><br>
-    <input type="file" name="product_pic" id="product_pic"/>
-    <img id='product_pic_preview' src='/images/blank.jpg' style="max-width:200px;max-height:200px" /><hr>
-
 	<input type="submit" name="action" value="Add new product" />
 </form>
 
-<script>
-	product_pic.onchange = evt => {
-    const [file] = product_pic.files
-    if (file) {
-        product_pic_preview.src = URL.createObjectURL(file)
-    }
-}
-</script>
 
 <a href="/Product/index">Back to index</a>
 <?php

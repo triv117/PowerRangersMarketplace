@@ -11,8 +11,9 @@ class User extends \app\core\Controller{
 				$_SESSION['user_id'] = $user->user_id;
 				$merchant = new \app\models\Merchant();
 				if($merchant->getByUser($_SESSION['user_id'])){
+					$merchant = $merchant->getByUser($_SESSION['user_id']);
 					$_SESSION['merchant_id'] = $merchant->merchant_id;
-					$this->view('Merchant/index');
+					header('location:/Merchant/index');
 				}else{
 					$this->view('User/account');
 				}

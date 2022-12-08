@@ -34,9 +34,9 @@ class Product extends \app\core\Controller{
 			$product = $product->get($product_id);
 			$product->delete();
 
-			header('location:/Product/index?message=Item removed from catalogue.');
+			header('location:/Merchant/index?message=Item removed from catalogue.');
 		}else{
-			$this->view('Product/index');
+			$this->view('Merchant/index');
 		}
 	}
 

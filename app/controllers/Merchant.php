@@ -3,7 +3,9 @@ namespace app\controllers;
 
 class Merchant extends \app\core\Controller{
 	public function index(){
-		$this->view('Merchant/index');
+		$product = new \app\models\Product();
+		$product = $product->getByMerchant($_SESSION['merchant_id']);
+		$this->view('Merchant/index' , ['product'=>$product]);
 	}
 
 	public function register(){
@@ -16,7 +18,6 @@ class Merchant extends \app\core\Controller{
 			}else{
 				$merchant->user_id = $_SESSION["user_id"];
 				$merchant->merchant_name = $_POST['merchant_name'];
-				$merchant->merchant_fname = $_POST['merchant_fname'];
 				$merchant->merchant_email = $_POST['merchant_email'];
 				$merchant->merchant_phone = $_POST['merchant_phone'];
 				$merchant->merchant_address = $_POST['merchant_address'];
