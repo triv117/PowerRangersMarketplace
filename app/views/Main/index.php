@@ -1,11 +1,145 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Poeweur Raanjer Store</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/"/>
+    <link rel="stylesheet" href="/resources/styles/carousel.css">
+    <link rel="stylesheet" href="/resources/styles/bootstrap.min.css">
+    <title>Main</title>
 </head>
+    <header class="site-header">
+        <div class="site-identity">
+            <h1><a href="#">P0w3r R4ng3rs™</a></h1>
+        </div>  
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a href="/Main/index">Home</a></li> 
+                <li><a href="/User/index">Login</a></li> 
+            </ul>
+        </nav>
+    </header>
 
-<body>
-<p>This is the index of the store.</p>
-</body>
-</html>
+    <style>
+
+    body {
+      font-family: Comic Sans;
+      margin: 0;
+      background-color: lightblue;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    .site-header { 
+      border-bottom: 1px solid #ccc;
+      padding: .5em 1em;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .site-identity h1 {
+      font-size: 1.5em;
+      margin: .6em 0;
+      display: inline-block;
+    }
+
+
+    .site-navigation ul, 
+    .site-navigation li {
+      margin: 0; 
+      padding: 0;
+    }
+
+    .site-navigation li {
+      display: inline-block;
+      margin: 1.4em 1em 1em 1em;
+    }
+    </style>
+
+	<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .text-color h1, .text-color p{
+            color: white;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="/resources/images/m.jpg" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption text-start text-color">
+                            <h1>Milestone Achieved! </h1>
+                            <p>
+                                Over the past year, UGlean has helped rescue over 85% of the leftover crops and has helped feed over 200 people in need.
+                            </p>
+                            <p>
+                                <a class="btn btn-lg btn-primary" href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/resources/images/h.jpg" alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption" style="color: white;">
+                            <h1>Safety Measures When Gleaning</h1>
+                            <p>
+                                What are some of the safety measures to take when gleaning? Click to learn more!
+                            </p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/resources/images/k.jpg" alt="Third slide">
+                    <div class="container">
+                        <div class="carousel-caption text-color text-end">
+                            <h1>Pictures are in!</h1>
+                            <p>
+                                View pictures from last year's events here!                            
+                            </p>
+                            <p>
+                                <a class="btn btn-lg btn-primary" href="#">Browse gallery</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Marketing messaging and featurettes
+    ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+            <?php $this->view('Main/Scripts'); ?>
+    </main>
+<?php
+$this->view('shared/footer');
+?>
