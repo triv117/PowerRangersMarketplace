@@ -6,7 +6,6 @@
 </head>
 
 <body>
-<p>Go go powpow.</p>
 <?php
 	if(isset($_GET['error'])){ ?>
 <div class="alert alert-danger" role="alert">

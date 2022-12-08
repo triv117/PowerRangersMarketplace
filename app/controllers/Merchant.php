@@ -76,4 +76,9 @@ class Merchant extends \app\core\Controller{
 			$this->view('Merchant/edit');
 		}
 	}
+
+	public function logout(){
+		session_destroy();
+		header('location:/User/account?message=You\'ve been successfully logged out.');
+	}
 }

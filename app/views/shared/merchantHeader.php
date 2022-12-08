@@ -11,8 +11,8 @@
 	  	</div>  
 	  	<nav class="site-navigation">
 	    	<ul class="nav">
-	     		<li><a href="#">Home</a></li> 
-	      		<li><a href="#">Logout</a></li> 
+	     		<li><a href="/Merchant/index">Home</a></li> 
+	      		<li><a href="/User/account">Logout</a></li> 
 	    	</ul>
 	  	</nav>
 	</header>

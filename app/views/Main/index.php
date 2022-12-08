@@ -86,9 +86,9 @@
                     <img class="d-block w-100" src="/resources/images/m.jpg" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption text-start text-color">
-                            <h1>Milestone Achieved! </h1>
+                            <h1>Mice</h1>
                             <p>
-                                Over the past year, UGlean has helped rescue over 85% of the leftover crops and has helped feed over 200 people in need.
+                                Shop the best mouse in town
                             </p>
                             <p>
                                 <a class="btn btn-lg btn-primary" href="#">Read More</a>
@@ -100,9 +100,9 @@
                     <img class="d-block w-100" src="/resources/images/h.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption" style="color: white;">
-                            <h1>Safety Measures When Gleaning</h1>
+                            <h1>Headphones</h1>
                             <p>
-                                What are some of the safety measures to take when gleaning? Click to learn more!
+                                Newest headphone for gamers
                             </p>
                             <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
                         </div>
@@ -112,9 +112,9 @@
                     <img class="d-block w-100" src="/resources/images/k.jpg" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption text-color text-end">
-                            <h1>Pictures are in!</h1>
+                            <h1>Keyboards</h1>
                             <p>
-                                View pictures from last year's events here!                            
+                                Latest keyboard with the most advanced features                          
                             </p>
                             <p>
                                 <a class="btn btn-lg btn-primary" href="#">Browse gallery</a>
