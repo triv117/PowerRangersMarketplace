@@ -6,57 +6,60 @@ $this->view('shared/merchantHeader', 'Product details');
  
 <dl>
 	<dt>
+		Product ID:
+	</dt>
+	<dd>
+		<?= $data->product_id ?>
+	</dd>
+	<dt>
 		Product Name:
 	</dt>
 	<dd>
-		<?= $data['product_name']->product_name ?>
+		<?= $data->product_name ?>
 	</dd>
 	<dt>
 		Product Description:
 	</dt>
 	<dd>
-		<?= $data['product_description']->product_description ?>
+		<?= $data->product_description ?>
 	</dd>
 	<dt>
 		Product Units:
 	</dt>
 	<dd>
-		<?= $data['product_units']->product_units ?>
+		<?= $data->product_units ?>
 	</dd>
 	<dt>
 		Product Price:
 	</dt>
 	<dd>
-		<?= $data['product_price']->product_price ?>
+		<?= $data->product_price ?>
 	</dd>
 	<dt>
 		Product Manufacturer:
 	</dt>
 	<dd>
-		<?= $data['product_manufacturer']->product_manufacturer ?>
+		<?= $data->product_manufacturer ?>
 	</dd>
 	<dt>
 		Product Rating:
 	</dt>
-	<dd>
-		<?= $data['product_rating']->product_rating ?>
-	</dd>
 	<dt>
 		Product Category:
 	</dt>
 	<dd>
-		<?= $data['product_category']->product_category ?>
+		<?= $data->product_category ?>
 	</dd>
 </dl>
+<script>
+<?
+if ($_SESSION["merchant_id"] =="") {
+	<button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\Wishlist\addToWishlist">Add to Wishlist</a></button>
 
-<button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\Wishlist\addToWishlist">Add to Wishlist</a></button>
-
-<!-- <script>
-file = "" + "<?= $data['animal']->profile_pic ?>"
-if (file != "") {
-	document.getElementById("profile_pic_preview").src = "/images/" + file;
 }
-</script> -->
+?>
+</script>
+
 
 <a href="/Product/index">Back to index</a>
 

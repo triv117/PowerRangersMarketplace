@@ -7,34 +7,37 @@
 
 <body>
 <p>Welcome to PowerRangers marketplace<p>
+    <a href='/Product/addProduct/$product->merchant_id'>add</a> 
 <div class="col-md-11 mx-auto">
   <div class="row">
-  </div>
-    <div class="row">
-        <table class="table table-bordered table-hovered mt-4 mx-3">
-            <a href='/Product/addProduct/$product->merchant_id'>add</a> 
-            <tr><th>Id</th><th>Name</th><th>Category</th><th>Price</th><th>Action</th></tr>
-            <tbody>
-                <?php
-                foreach ($data as $product) {
-                echo "<tr>
-                <td type=name>$product->merchant_id->$product_id</td>
-                <td type=name>$product->merchant_id->$product_name</td>
-                <td type=name>$product->merchant_id->$product_category</td>
-                <td type=name>$product->merchant_id->$product_price</td>
-                <td type=action>
-                    <a href='/Product/editProduct/$product->product_id'>edit</a> | 
-                    <a href='/Product/viewProduct/$product->product_id'>details</a> |
-                    <a href='/Product/removeProduct/$product->product_id'>delete</a> |
-                </td>
-                </tr>";
-                }
-            
-            ?>
-            </tbody>
-        </table>
+        </div>
+            <div class="row">
+                <table class="table table-bordered table-hovered mt-4 mx-3">
+                    
+                    <tr><th>Id</th><th>Name</th><th>Category</th><th>Price</th><th>Action</th></tr>
+                    <tbody>
+                        <?php
+                        foreach ($data['product'] as $product) {
+                        echo "<tr>
+                        <td type=name>$product->product_id</td>
+                        <td type=name>$product->product_name</td>
+                        <td type=name>$product->product_category</td>
+                        <td type=name>$product->product_price</td>
+                        <td type=action>
+                            <a href='/Product/editProduct/$product->product_id'>edit</a> | 
+                            <a href='/Product/details/$product->product_id'>details</a> |
+                            <a href='/Product/removeProduct/$product->product_id'>delete</a> |
+                        </td>
+                        </tr>";
+                        }
+                    
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
 </body>
 </html>

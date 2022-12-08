@@ -4,8 +4,8 @@ namespace app\controllers;
 class Product extends \app\core\Controller{
 	public function index(){
 		$product = new \app\models\Product();
-		$products = $product->getAll();
-		$this->view('Product/index');
+		$product = $product->getAll();
+		$this->view('Product/index' , ['product'=>$product]);
 	}
 
 	public function addProduct(){
@@ -43,10 +43,9 @@ class Product extends \app\core\Controller{
 	}
 
 	public function editProduct($product_id){
+		$product = new \app\models\Product();
+		$product = $product->get($product_id);
 		if(isset($_POST['action'])){
-			$product = new \app\models\Product();
-			$product = $product->get($product_id);
-			
 			$product->product_name = $_POST['product_name'];
 			$product->product_description = $_POST['product_description'];
 			$product->product_units = $_POST['product_units'];
@@ -57,14 +56,14 @@ class Product extends \app\core\Controller{
 
 			header('location:/Merchant/index?message=Item updated.');
 		}else{
-			$this->view('Product/editProduct/' . $product->product_id);
+			$this->view('Product/editProduct', $product);
 		}
 	}
 
-	public function viewProduct($product_id){
+	public function details($product_id){
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
-		$this->view('Product/details/' . $product->product_id);
+		$this->view('Product/details', $product);
 	}
 
 	public function viewMerchant($merchant_id){

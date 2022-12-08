@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers;
 
-class User extends \app\core\Controller{
+class Cart extends \app\core\Controller{
 
 	public function addToWishlist($product_id){
 		if(isset($_POST['action'])){
@@ -13,9 +13,9 @@ class User extends \app\core\Controller{
 
 			$wishlist->product_id = $product_id;
 			$wishlist->insert();
-			header('location:/Product/details',['product'->$product]);
+			header('location:/Product/index',['product'->$product]);
 		}else{
-			$this->view('Product/details',['product'->$product]);
+			$this->view('Product/index',['product'->$product]);
 		}
 	}
 

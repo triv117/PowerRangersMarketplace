@@ -22,7 +22,7 @@ class Product extends \app\core\Model{
 	}
 
 	public function getByMerchant($merchant_id){
-        $SQL = "SELECT * FROM product WHERE product_category = :merchant_id";
+        $SQL = "SELECT * FROM product WHERE merchant_id = :merchant_id";
         $STMT = self::$_connection->prepare($SQL);
         $STMT->execute(['merchant_id'=>$merchant_id]);
         $STMT->setFetchMode(\PDO::FETCH_CLASS, 'app\models\Product');
