@@ -4,21 +4,17 @@ namespace app\controllers;
 class Cart extends \app\core\Controller{
 
 	public function addToCart($product_id){
-		$product = new \app\models\product();
-		$product = $product->get($product_id);
-		if(isset($_POST['action'])){
+		if (in_array($product_id, $product)){
 			$cart = new \app\models\Cart();
-			$cart = $cart->getByUser($_SESSION['user_id']);
-
-			
-
+			$cart->user_id = $_SESSION['user_id'];
 			$cart->product_id = $product_id;
-			$cart->product_count = $_POST['product_count'];
+			$cart->product_count = 1;
 			$cart->insert();
-			$this->view('Product/index', $product);
-		}else{
-			$this->view('Product/index', $product);
+			header('location:Product/index');
 		}
+		else{
+			
+		}		
 	}
 
 	public function index(){

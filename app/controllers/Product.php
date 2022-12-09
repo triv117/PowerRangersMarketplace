@@ -31,15 +31,12 @@ class Product extends \app\core\Controller{
 	}
 
 	public function removeProduct($product_id){
-		if(isset($_POST['action'])){
 			$product = new \app\models\Product();
 			$product = $product->get($product_id);
 			$product->delete();
 
 			header('location:/Merchant/index?message=Item removed from catalogue.');
-		}else{
-			$this->view('Merchant/index');
-		}
+		
 	}
 
 	public function editProduct($product_id){

@@ -20,7 +20,7 @@ class Cart extends \app\core\Model{
 	}
 
 	public function update(){
-		$SQL = "UPDATE cart SET product_count=:product_count WHERE product_id=:product_id AND user_id=:user_id";
+		$SQL = "ON DUPLICATE KEY UPDATE product_count = product_count + 1;"; 
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['product_name'=>$this->product_name,
 						'product_description'=>$this->product_description,
