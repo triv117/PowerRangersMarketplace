@@ -61,7 +61,6 @@ if ($_SESSION["merchant_id"] =="") {
 </script>
 
 
-<a href="/Product/index">Back to index</a>
 
 <?php
 $this->view('shared/footer');

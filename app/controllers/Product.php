@@ -46,6 +46,7 @@ class Product extends \app\core\Controller{
 		$product = new \app\models\Product();
 		$product = $product->get($product_id);
 		if(isset($_POST['action'])){
+			
 			$product->product_name = $_POST['product_name'];
 			$product->product_description = $_POST['product_description'];
 			$product->product_units = $_POST['product_units'];

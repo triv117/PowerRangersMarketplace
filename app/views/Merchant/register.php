@@ -38,7 +38,7 @@
           </div>
           <div class="input-box">
             <span class="details">City</span>
-            <input type="text" name="user_city" placeholder="Enter merchant city" required>
+            <input type="text" name="merchant_city" placeholder="Enter merchant city" required>
           </div>
           <div class="input-box">
             <span class="details">Country</span>
