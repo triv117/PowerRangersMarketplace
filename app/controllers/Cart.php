@@ -24,7 +24,7 @@ class Cart extends \app\core\Controller{
 	public function index(){
 		$cart = new app\models\Cart();
 		$cart = $cart->getByUser($_SESSION['user_id']);
-		$this->view('Cart/index');
+		$this->view('Cart/index', $cart);
 	}
 
 	public function deleteFromCart($product_id){

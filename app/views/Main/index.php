@@ -8,11 +8,10 @@
 </head>
     <header class="site-header">
         <div class="site-identity">
-            <h1><a href="#">P0w3r R4ng3rs™</a></h1>
+            <h1><a href="#">Power Rangers™</a></h1>
         </div>  
         <nav class="site-navigation">
             <ul class="nav">
-                <li><a href="/Main/index">Home</a></li> 
                 <li><a href="/User/index">Login</a></li> 
             </ul>
         </nav>

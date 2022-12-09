@@ -1,18 +1,18 @@
-<html>
-<head>
-	<title>Main</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</head>
+<?php
+$this->view('shared/merchantHeader', 'Merchant Index');
+?>
+<h1>Welcome</h1><br>
 
-<body>
-<p>Welcome to PowerRangers marketplace<p>
-    <a href='/Product/addProduct/$product->merchant_id'>add</a> 
+    <button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href='/Product/addProduct/$product->merchant_id'>Add new product</a></button>
+    <button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\Merchant\edit">Edit Account</a></button>
+    <button type= "submit" value="Submit" class="btn btn-primary"><a style="color:white" href="\Merchant\changeAdmin">Change Admin</a></button>
+    <hr>
+    <h3>List of products</h3><br>
 <div class="col-md-11 mx-auto">
   <div class="row">
         </div>
             <div class="row">
-                <table class="table table-bordered table-hovered mt-4 mx-3">
+                <table class="T">
                     
                     <tr><th>Id</th><th>Name</th><th>Category</th><th>Price</th><th>Action</th></tr>
                     <tbody>
@@ -24,7 +24,7 @@
                         <td type=name>$product->product_category</td>
                         <td type=name>$product->product_price</td>
                         <td type=action>
-                            <a href='/Product/editProduct/$product->product_id'>edit</a> | 
+                            |<a href='/Product/editProduct/$product->product_id'>edit</a> | 
                             <a href='/Product/details/$product->product_id'>details</a> |
                             <a href='/Product/removeProduct/$product->product_id'>delete</a> |
                         </td>
@@ -38,6 +38,6 @@
         </div>
     </div>
 </div>
-
-</body>
-</html>
+<?php
+$this->view('shared/footer');
+?>

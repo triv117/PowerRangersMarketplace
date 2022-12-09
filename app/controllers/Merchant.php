@@ -60,7 +60,8 @@ class Merchant extends \app\core\Controller{
 			$this->view('Merchant/changeAdmin');
 	}
 	
-	public function edit(){
+	public function edit($merchant_id = null){
+		$merchant_id = $_SESSION['merchant_id'];
 		$merchant = new \app\models\Merchant();
 		$merchant = $merchant->get($_SESSION['merchant_id']);
 
@@ -73,8 +74,10 @@ class Merchant extends \app\core\Controller{
 			$merchant->merchant_country = $_POST['merchant_country'];
 			$merchant->merchant_region = $_POST['merchant_region'];
 			$merchant->merchant_zip = $_POST['merchant_zip'];
+			$merchant_id = $_SESSION['merchant_id'];
+			
 			$merchant->update();
-			header('location:/Merchant/index');
+			$this->view('Merchant/index');
 		}
 		else{
 			$this->view('Merchant/edit');

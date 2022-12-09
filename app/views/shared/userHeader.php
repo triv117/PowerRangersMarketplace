@@ -5,13 +5,13 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<script type="text/javascript" src='https://code.jquery.com/jquery-3.6.1.min.js'></script>
 	<script type="text/javascript" src='/js/feedback.js'></script>
+	<link rel="stylesheet" type="text/css" href="/resources/styles/tablestyle.css"/>
 	<header class="site-header">
   		<div class="site-identity">
 	    	<h1><a href="#">Power Rangers™</a></h1>
 	  	</div>  
 	  	<nav class="site-navigation">
 	    	<ul class="nav">
-	      		<li><a href="/Merchant/index">Home</a></li> 
 	      		<li><a href="/Wishlist/index">Wishlist</a></li>
 	      		<li><a href="/Cart/index">Cart</a></li>
 	      		<li><a href="/Main/index">Logout</a></li> 
@@ -23,6 +23,7 @@
 	body {
 	  font-family: Comic Sans;
 	  margin: 0;
+	  background-color: lightblue;
 	}
 	a {
 	  text-decoration: none;

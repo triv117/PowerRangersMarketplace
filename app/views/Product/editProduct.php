@@ -15,7 +15,7 @@ $this->view('shared/merchantHeader', 'Edit product');
     <input type="number" name="units" placeholder="Enter product unit"/><hr>
 
     <label for="product_price">Product Price:</label><br>
-    <input type="number" name="price" placeholder="Enter product price"/><hr>
+    <input type="text" name="price" placeholder="Enter product price"/><hr>
 
     <label for="product_manufacturer">Product Manufacturer:</label><br>
     <input type="text" name="manufacturer" placeholder="Enter product manufacturer"/><hr>
@@ -27,7 +27,6 @@ $this->view('shared/merchantHeader', 'Edit product');
 </form>
 
 
-<a href="/Product/index/<?= $data['user']->user_id ?>">Cancel</a>
 
 <?php
 $this->view('shared/footer');

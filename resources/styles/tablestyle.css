@@ -1,0 +1,48 @@
+.T {
+    border-collapse: collapse;
+    margin-left:auto; 
+    margin-right:auto;
+    width: 1100px;
+    border: 2px solid darkblue;
+    background-color: darkblue;
+    
+}
+
+.T td{
+    border: 2px solid darkblue;
+}
+
+  .T th {
+    font-size: 20px;
+    border: 2px solid darkblue;
+    background-color:black;
+    color: white;
+  }
+
+  .T tbody tr:nth-child(even) {
+    background-color: lightcyan;
+    color: rgb(0, 28, 155) ;
+    font-size: 17px;
+    text-align: center;
+    empty-cells: show;
+  }
+
+  .T tbody tr:nth-child(odd) {
+    background-color: lightyellow;
+    color: rgb(0, 28, 155) ;
+    font-size: 17px;
+    text-align: center;
+    empty-cells: show;
+  }
+
+  .T tfoot {
+    border: 2px solid rgb(255, 0, 0);
+    background-color: rgb(255, 236, 205);
+    color: rgb(139, 12, 12) ;
+    font-size: 22px;
+    text-align: center;
+}
+
+.T caption{
+    color: rgb(89, 6, 156) ;
+}

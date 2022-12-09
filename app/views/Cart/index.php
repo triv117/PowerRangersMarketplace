@@ -1,5 +1,5 @@
 <?php
-$this->view('shared/userHeader', 'User Index');
+$this->view('shared/userHeader', 'User Cart');
 ?>
 
 <p><!--display the data as a table-->
